@@ -1,9 +1,8 @@
 # HPI-localizer-validation
-Estimating local home price indices via a linear regression on core stochastic simulations and validating volatility estimates
 
-This respository contains the second of two projects I undertook during my internship at Andrew Davidson & Co, which I pursued under the supervision of the Financial Engineering team. 
+Estimating US regional home price indices via a linear regression on core stochastic simulations, validating estimated volatility against historical data.
 
-Financial Background:
+### Financial Background:
 
 HPI measures the percent change in house prices over a sample, with the baseline normalized to 100. It is commonly understood that the underlying value of a home is a significant risk factor in mortgage-backed securities, and so AD-Co models *projected* HPI as part of their proprietary mortgage risk model. 
 
@@ -11,7 +10,7 @@ The HPI model can be thought of as a two-component system, a core simulator and 
 
 From these core indices, we run a constrained linear regression to estimate HPI series in the 50 states, in numerous Metropolitan Statistical Areas, and nationwide. The reasoning is that a given locality's HPI may be positively or negatively correlated against any of the core indices.
 
-The Problem:
+### The Problem:
 
 The localizer achieves a high level of accuracy in terms of an R^2 score (see the notebook "localzier/HPA Localizer.ipynb" for details), but the linear regression method has at least one shortcoming: the regression tends to exaggerate HPI volatility in localities with a large set of coefficients. (In simplified terms, expanding stochastic by a scalar multiple and combining them will result in more extreme, coincident jumps.) 
 
