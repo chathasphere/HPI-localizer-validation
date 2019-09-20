@@ -4,7 +4,7 @@ Estimating US regional home price indices via a linear regression on core stocha
 
 ### Financial Background:
 
-HPI measures the percent change in house prices over a sample, with the baseline normalized to 100. It is commonly understood that the underlying value of a home is a significant risk factor in mortgage-backed securities, and so AD-Co models *projected* HPI as part of their proprietary mortgage risk model. 
+HPI measures the percent change in house prices over a sample, with the baseline normalized to 100. It is commonly understood that the underlying value of a home is a significant risk factor in mortgage-backed securities.
 
 The HPI model can be thought of as a two-component system, a core simulator and a localizer. The core simulator focuses on 5 indices, corresponding to 5 indices of Radar Logic's (since discontinued) RPX housing-price forward contracts, New York, Miami, Phoenix, Los Angeles, and a 25-city composite. The original reasoning behind this choice is that, while the RPX indices were being traded, accurate forward prices were available to supplement the model's projections. As HPA (returns on HPI) series tend to resemble geometric Brownian motion (local random 'jumps', long-term 'drift'), the HPI core model makes use of a stochastic differential equation, further discussed in the "HPI Black Volatility 3" notebook, the coefficients of which are estimated from empirical data. Thus, New York's HPI has a lower volatility than, say, that of Phoenix. 
 
