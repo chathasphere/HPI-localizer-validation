@@ -11,7 +11,7 @@ The HPI model can be thought of as a two-component system, a core simulator and 
 From these core indices, we run a constrained linear regression to estimate HPI series in the 50 states, in numerous Metropolitan Statistical Areas, and nationwide. The reasoning is that a given locality's HPI may be positively or negatively correlated against any of the core indices.
 
 ### The Problem:
+The localizer achieves an accurate R^2 score (see the notebook "localizer/HPA Localizer.ipynb" for details), but the linear regression method has a major shortcoming: the regression tends to exaggerate HPI volatility in regions with large coefficients: a big linear combination of multiple stochastic processes will result in more extreme, coinciding jumps.
 
-The localizer achieves a high level of accuracy in terms of an R^2 score (see the notebook "localzier/HPA Localizer.ipynb" for details), but the linear regression method has at least one shortcoming: the regression tends to exaggerate HPI volatility in localities with a large set of coefficients. (In simplified terms, expanding stochastic by a scalar multiple and combining them will result in more extreme, coincident jumps.) 
-
-In the principle notebook, I derive historical and simulated "Black" Volatility (named after Fischer Black of the Black-Scholes model) in all indices and identify where the model errs. 
+### The Solution:
+I derive historical and simulated "Black" Volatility (named after Fischer Black of the Black-Scholes model) in all indices and identify where the model errs. 
